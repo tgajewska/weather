@@ -3,26 +3,32 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width-device-width, initial-scale=1, shrink-to-fit=no" />
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css" />
 
 
-  <title>Ajax exercises</title>
+
+  <title>Weather</title>
 </head>
 
 <body>
   <h1>Sprawdź pogodę dla dowolnego miasta na świecie</h1>
 
+  <div class="loader-container" id="loader"><div class="loader"></div></div>
+
+
   <form id="form">
-    <label for="citySelect">Wpisz nazwę miasta, używając alfabetu łacińskiego bez znaków diakrytycznych:</label>
+    <label for="citySelect">Wpisz nazwę miasta, używając alfabetu łacińskiego bez znaków diakrytycznych:</label><br />
     <input type="text" value="miasto" name="miasto"/>
+    <!-- <select id="countries"></select> -->
+    <br />
     <button type="submit">Sprawdź pogodę!</button>
   </form>
 
 
   <div id="output">
-    <div id="icon"></div>
+    <div id="cityName"></div>
+    <div id="icon" class="icon"></div>
     <div id="weatherDescription"></div>
   </div>
 

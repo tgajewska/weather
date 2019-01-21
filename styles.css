@@ -1,0 +1,105 @@
+html, body {
+  width:100%;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  background-color: #fffae6;
+}
+
+h1 {
+  padding: 1rem;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+input, label {
+  margin:1rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 2px solid #c2c2d6;
+  border-radius: 5px;
+  width: 150px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #ff0066;
+  color:white;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 1rem;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+-moz-transition: 0.5s ease-in;
+-ms-transition: 0.5s ease-in;
+-o-transition: 0.5s ease-in;
+}
+
+button:hover {
+  background-color: #ff80b3;
+  transform: scale(1.1);
+  transition: 0.5s ease-out;
+  -webkit-transition: 0.5s ease-out;
+-moz-transition: 0.5s ease-out;
+-ms-transition: 0.5s ease-out;
+-o-transition: 0.5s ease-out;
+}
+
+.icon img {
+  height: 80px;
+}
+
+.loader-container {
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  display:none;
+}
+
+.visible {
+  display:block;
+}
+
+.loader {
+  display:inline-block;
+  position: absolute;
+  top:45%;
+  height:20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 10px solid #aaa;
+  border-top-color: #3399ff;
+  animation: spin 1s linear infinite;
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  -ms-animation: spin 1s linear infinite;
+  -o-animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}

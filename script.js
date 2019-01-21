@@ -1,3 +1,5 @@
+const loader = document.getElementById("loader");
+
 window.onload = function() {
   getUsersChoice();
 }
@@ -6,10 +8,11 @@ function getUsersChoice() {
   var form = document.getElementById('form');
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    var usersChoice = document.querySelector('input[name="miasto"]').value;
+    const usersChoice = document.querySelector('input[name="miasto"]').value;
     const regCity  = /^([a-zA-Z]+[\-]?\s?[a-zA-Z]+)+$/;
     if (regCity.test(usersChoice))
-    {cleanOldResults();
+    {loader.classList.add("visible");
+    cleanOldResults();
     loadData(usersChoice);}
     else {alert('Ups! Wystąpił błąd. We wpisanej przez ciebie nazwie występują niedozwolone znaki.')}
 
@@ -22,7 +25,7 @@ function cleanOldResults(output) {
 }
 
 function loadData(city) {
-  const url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&lang=pl&APPID=7b4b8f718de226945108261490b7475c';
+  const url = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=metric&lang=pl&APPID=7b4b8f718de226945108261490b7475c';
   fetch(url)
   .then(resJSON)
   .then(myData => handleData(myData))
@@ -33,9 +36,13 @@ function resJSON(response){
 }
 
 function handleData(data) {
+  console.log(data);
+  const city = document.getElementById("cityName");
   const text = document.getElementById("weatherDescription");
+  loader.classList.remove("visible");
+  cityName.innerHTML = data.city.name + ", " + data.city.country;
   loadIcon(data);
-  text.innerHTML = Math.round(data.list[0].main.temp - 273.15) + ' st. C., ' + data.list[0].weather[0].description;
+  text.innerHTML = Math.round(data.list[0].main.temp) + ' st. C., ' + data.list[0].weather[0].description;
 }
 
 function loadIcon(data) {
