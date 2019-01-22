@@ -2,7 +2,6 @@ html, body {
   width:100%;
   font-family: 'Open Sans', sans-serif;
   text-align: center;
-  background-color: #fffae6;
 }
 
 h1 {
@@ -13,11 +12,9 @@ form {
   margin-bottom: 2rem;
 }
 
-input, label {
-  margin:1rem;
-}
 
-input {
+
+input, select {
   padding: 0.5rem;
   border: 2px solid #c2c2d6;
   border-radius: 5px;
